@@ -1,12 +1,21 @@
 # _Hetzner Cloud_ - Volume <img src="https://avatars.githubusercontent.com/u/30047064?s=200&v=4" alt="Hetzner Logo" align="right" width="128"/> <img src="https://raw.githubusercontent.com/fmjstudios/artwork/refs/heads/main/projects/terraform/icon/color/terraform-icon-color.png" alt="Terraform Logo" align="right" width="128"/>
 
+[![License](https://img.shields.io/github/license/terraform-hetzner-modules/terraform-hetzner-volume?label=License)](https://opensource.org/licenses/MIT)
+[![Terraform](https://img.shields.io/badge/Terraform-_>=_1.7-brightgreen?logo=terraform&logoColor=623CE4)][terraform]
+[![Opentofu](https://img.shields.io/badge/OpenTofu-_>=_1.8-brightgreen?logo=opentofu)][opentofu]
+[![CI Status](https://github.com/terraform-hetzner-modules/terraform-hetzner-volume/actions/workflows/testing.yaml/badge.svg)](https://github.com/terraform-hetzner-modules/terraform-hetzner-volume/blob/main/.github/workflows/testing.yaml)
+[![GitHub Release](https://img.shields.io/github/v/release/terraform-hetzner-modules/terraform-hetzner-volume?label=Release)][github_releases]
+[![GitHub Activity](https://img.shields.io/github/commit-activity/m/terraform-hetzner-modules/terraform-hetzner-volume?label=Commits)][github_commits]
+[![Renovate](https://img.shields.io/badge/Renovate-enabled-brightgreen?logo=renovate&logoColor=1A1F6C)][renovate]
+[![Pre-Commit](https://img.shields.io/badge/PreCommit-enabled-brightgreen?logo=precommit&logoColor=FAB040)][pre-commit]
+
 A [Terraform module][module] to create and manage hard disk volumes for your [Hetzner Cloud][hetzner] servers.
 
 ## ✨ TL;DR
 
 ```shell
-module "hetzner_server_apache" {
-  source = "terraform-hetzner-modules/cloud/server"
+module "hetzner_volume_apache_server" {
+  source = "terraform-hetzner-modules/cloud/volume"
   ...
 }
 ```
@@ -80,9 +89,15 @@ for more information. You may also use the linked contact details to reach out d
 <!-- General links -->
 
 [org]: https://github.com/fmjstudios
+[terraform]: https://terraform.io
+[opentofu]: https://opentofu.org/
 [hashicorp]: https://www.hashicorp.com/
 [hetzner]: https://hetzner.com
+[github_releases]: https://github.com/terraform-hetzner-modules/terraform-hetzner-volume/releases
+[github_commits]: https://github.com/terraform-hetzner-modules/terraform-hetzner-volume/commits/main/
 
 <!-- Third-party -->
 
-[module]: https://registry.terraform.io/modules/terraform-hetzner-modules/compute/server/latest
+[module]: https://registry.terraform.io/modules/terraform-hetzner-modules/cloud/volume/latest
+[renovate]: https://renovatebot.com/
+[pre-commit]: https://pre-commit.com/
