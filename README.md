@@ -20,9 +20,13 @@ A [Terraform module][module] to create and manage hard disk volumes for your [He
 ## ✨ TL;DR
 
 ```hcl
-module "hetzner_volume_apache_server" {
+module "volume" {
   source = "terraform-hetzner-modules/volume/hetzner"
-  ...
+
+  name   = "app-data"
+  size   = 50
+  format = "xfs"
+  attach = false
 }
 ```
 
