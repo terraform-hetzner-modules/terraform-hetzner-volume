@@ -34,11 +34,20 @@ output "volume_delete_protection" {
 }
 
 output "volume_attachment_id" {
-  value       = hcloud_volume_attachment.current.id
+  value       = try(hcloud_volume_attachment.current[0].id, null)
   description = "The ID for the new volume attachment."
 }
 
 output "volume_attachment_server_id" {
-  value       = hcloud_volume_attachment.current.server_id
+  value       = try(hcloud_volume_attachment.current[0].server_id, null)
   description = "The server ID for the new volume attachment."
+}
+
+output "volume" {
+  value       = hcloud_volume.current
+  description = "Complete volume attributes, including format and attachment status."
+}
+output "attachment" {
+  value       = try(hcloud_volume_attachment.current[0], null)
+  description = "Complete attachment attributes, or null for an unattached volume."
 }

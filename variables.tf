@@ -11,7 +11,7 @@ variable "size" {
 
 variable "location" {
   type        = string
-  description = "The location for the new Hetzner Cloud volume. This is enforced since it automatically disallows the use of 'server_id' within the 'hcloud_volume' resource so that volumes do NOT get coupled to servers, but instead remain their own separately manageable resource. Default is 'fsn1' and other possible values are 'nbg1', 'hel1', 'ash' or 'hil'."
+  description = "The location for the new Hetzner Cloud volume. This is enforced since it automatically disallows the use of 'server_id' within the 'hcloud_volume' resource so that volumes do NOT get coupled to servers, but instead remain their own separately manageable resource. Defaults to 'fsn1'; accepts any supported Hetzner location."
   default     = "fsn1"
 }
 
@@ -42,4 +42,15 @@ variable "automount" {
   type        = bool
   description = "Whether or not to automount the volume after attaching it within Hetzner Cloud. This is exclusively used within the 'hcloud_volume_attachment' resource as not to couple servers. Default is 'true'."
   default     = true
+}
+
+variable "labels" {
+  type        = map(string)
+  description = "Labels attached to the volume."
+  default     = {}
+}
+variable "attach" {
+  type        = bool
+  description = "Whether to create an attachment. Set explicitly to true when server_id is unknown until apply. Null preserves v1 behavior for known, non-null IDs."
+  default     = null
 }

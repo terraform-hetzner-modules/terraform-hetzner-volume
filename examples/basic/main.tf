@@ -1,5 +1,5 @@
 module "volumes_example" {
-  source    = ".."
-  name      = "example_volume-20G-xfs"
-  server_id = 0
+  source = "../.."
+  name   = "example-unattached-volume"
+  attach = false
 }
